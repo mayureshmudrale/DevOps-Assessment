@@ -30,12 +30,12 @@ jobs:
         docker build -t akai7/azure-aks:$IMAGE_TAG .
         docker push akai7/azure-aks:$IMAGE_TAG
         echo "::set-output name=image::akai7/azure-aks:$IMAGE_TAG"
-    - name: Clone deployment repository
-      run: |
-        git clone https://github.com/mayureshmudrale/wohlig-yaml.git deployment-repo
-      env:
-        GH_TOKEN: ${{ secrets.TOKEN }}
-        GH_USER: ${{ secrets.G_USERNAME }}
+    - name: Clone manifest repo
+      uses: actions/checkout@v2
+      with:
+        repository: mayureshmudrale/wohlig-yaml
+        path: deployment-repo
+        
                       
 
     
