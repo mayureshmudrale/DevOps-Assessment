@@ -31,9 +31,10 @@ jobs:
         docker push akai7/azure-aks:$IMAGE_TAG
         echo "::set-output name=image::akai7/azure-aks:$IMAGE_TAG"
     - name: Clone manifest repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
-        repository: mayureshmudrale/wohlig-yaml
+        repository: https://github.com/mayureshmudrale/wohlig-yaml.git
+        token: ${{ secrets.TOKEN }}
         path: deployment-repo
         ref: main
         
