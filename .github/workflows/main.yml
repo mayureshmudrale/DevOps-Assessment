@@ -35,6 +35,7 @@ jobs:
       with:
         repository: mayureshmudrale/wohlig-yaml
         path: deployment-repo
+        ref: main
         
                       
 
