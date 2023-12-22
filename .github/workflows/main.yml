@@ -42,8 +42,8 @@ jobs:
         sed -i "akai7/azure-aks:.*|akai7/azure-aks:${IMAGE_TAG}|"  deployment-repo/yaml/deployment.yaml
     - name: Commit and push updated YAML
       run: |
-        git config --global user.email "mayureshmudrale@gmail.com"
-        git config --global user.name "mayuresh"
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
         git add deployment-repo/yaml/deployment.yaml
         git commit -m "Update image tag"
         git push
