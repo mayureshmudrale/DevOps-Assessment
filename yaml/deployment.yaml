@@ -1,68 +1,34 @@
 apiVersion: apps/v1
-kai7/azure-aks:.*|akai7/azure-aks:|
 kind: Deployment
-kai7/azure-aks:.*|akai7/azure-aks:|
 metadata:
-kai7/azure-aks:.*|akai7/azure-aks:|
   name: nodejs-app
-kai7/azure-aks:.*|akai7/azure-aks:|
 spec:
-kai7/azure-aks:.*|akai7/azure-aks:|
   replicas: 3
-kai7/azure-aks:.*|akai7/azure-aks:|
   selector:
-kai7/azure-aks:.*|akai7/azure-aks:|
     matchLabels:
-kai7/azure-aks:.*|akai7/azure-aks:|
       app: nodejs-app
-kai7/azure-aks:.*|akai7/azure-aks:|
   template:
-kai7/azure-aks:.*|akai7/azure-aks:|
     metadata:
-kai7/azure-aks:.*|akai7/azure-aks:|
       labels:
-kai7/azure-aks:.*|akai7/azure-aks:|
         app: nodejs-app
-kai7/azure-aks:.*|akai7/azure-aks:|
     spec:
-kai7/azure-aks:.*|akai7/azure-aks:|
       containers:
-kai7/azure-aks:.*|akai7/azure-aks:|
       - name: nodejs-app
-kai7/azure-aks:.*|akai7/azure-aks:|
         image: akai7/azure-aks:latest  # Update with your actual container registry and image name
-kai7/azure-aks:.*|akai7/azure-aks:|
         ports:
-kai7/azure-aks:.*|akai7/azure-aks:|
         - containerPort: 3000
-kai7/azure-aks:.*|akai7/azure-aks:|
       imagePullSecrets:
-kai7/azure-aks:.*|akai7/azure-aks:|
         - name: regcred 
-kai7/azure-aks:.*|akai7/azure-aks:|
 ---
-kai7/azure-aks:.*|akai7/azure-aks:|
 apiVersion: v1
-kai7/azure-aks:.*|akai7/azure-aks:|
 kind: Service
-kai7/azure-aks:.*|akai7/azure-aks:|
 metadata:
-kai7/azure-aks:.*|akai7/azure-aks:|
   name: nodejs-service
-kai7/azure-aks:.*|akai7/azure-aks:|
 spec:
-kai7/azure-aks:.*|akai7/azure-aks:|
   selector:
-kai7/azure-aks:.*|akai7/azure-aks:|
     app: nodejs-app
-kai7/azure-aks:.*|akai7/azure-aks:|
   ports:
-kai7/azure-aks:.*|akai7/azure-aks:|
     - protocol: TCP
-kai7/azure-aks:.*|akai7/azure-aks:|
       port: 80
-kai7/azure-aks:.*|akai7/azure-aks:|
       targetPort: 3000
-kai7/azure-aks:.*|akai7/azure-aks:|
   type: ClusterIP
-kai7/azure-aks:.*|akai7/azure-aks:|
