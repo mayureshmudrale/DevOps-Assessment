@@ -23,8 +23,8 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build -t azure-aks/mynodejs-app:latest .
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker push akai7/azure-aks/mynodejs-app:latest
+        docker build -t akai7/azure-aks:latest .
+        docker push akai7/azure-aks:latest
 
     
