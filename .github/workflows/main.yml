@@ -30,16 +30,9 @@ jobs:
         docker build -t akai7/azure-aks:$IMAGE_TAG .
         docker push akai7/azure-aks:$IMAGE_TAG
         echo "::set-output name=image::akai7/azure-aks:$IMAGE_TAG"
-    - name: Clone manifest repo
-      uses: actions/checkout@v4
-      with:
-        repository: mayureshmudrale/wohlig-yaml
-        token: ${{ secrets.TOKEN }}
-        path: deployment-repo
-        ref: main
     - name: Update image tag
       run: |
-        sed -i "akai7/azure-aks:.*|akai7/azure-aks:${IMAGE_TAG}|"  deployment-repo/yaml/deployment.yaml
+        sed -i "akai7/azure-aks:.*|akai7/azure-aks:${IMAGE_TAG}|"  yaml/deployment.yaml
     - name: Commit and push updated YAML
       run: |
         git config --global user.email "actions@github.com"
