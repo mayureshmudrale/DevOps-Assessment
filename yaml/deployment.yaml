@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nodejs-app
-        image: akai7/azure-aks:latest  # Update with your actual container registry and image name
+        image: akai7/azure-aks:13ec9b03dabea711d86e2ad700022f8ce5c8de1b
         ports:
         - containerPort: 3000
       imagePullSecrets:
@@ -32,4 +32,4 @@ spec:
       port: 80
       targetPort: 3000
   type: ClusterIP
-image: akai7/azure-aks:
+image: akai7/azure-aks:13ec9b03dabea711d86e2ad700022f8ce5c8de1b
