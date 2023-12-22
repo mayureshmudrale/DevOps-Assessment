@@ -66,3 +66,4 @@ kai7/azure-aks:.*|akai7/azure-aks:|
 kai7/azure-aks:.*|akai7/azure-aks:|
   type: ClusterIP
 kai7/azure-aks:.*|akai7/azure-aks:|
+image: akai7/azure-aks:
