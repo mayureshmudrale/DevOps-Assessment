@@ -27,7 +27,7 @@ jobs:
         IMAGE_TAG: ${{ github.sha }}
       run: |
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker build -t akai7/azure-aks:latest .
+        docker build -t akai7/azure-aks:$IMAGE_TAG .
         docker push akai7/azure-aks:latest
         echo "::set-output name=image::akai7/azure-aks:$IMAGE_TAG"
 
