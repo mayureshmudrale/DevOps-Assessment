@@ -33,7 +33,7 @@ jobs:
     - name: Clone manifest repo
       uses: actions/checkout@v4
       with:
-        repository: https://github.com/mayureshmudrale/wohlig-yaml.git
+        repository: mayureshmudrale/wohlig-yaml
         token: ${{ secrets.TOKEN }}
         path: deployment-repo
         ref: main
