@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nodejs-app
-        image: akai7/azure-aks:237aaee3ae4be14c692202b2fde8bacf5d659a87
+        image: akai7/azure-aks:a144fd9172ed5935d05295f977ee108724badbf9
         ports:
         - containerPort: 8089
       imagePullSecrets:
